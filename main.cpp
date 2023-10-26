@@ -1,42 +1,40 @@
 #include <iostream>
 using namespace std;
+#define rows 3
+#define cols 3
 
-const int Rows = 3, Cols = 3;
-void Func(int list[][Cols])
+void Func(int list[][rows])
 {
-    int N_list[Cols][Rows];
-
-    for (int i = 0; i < Rows; i++)
+    int N_list[cols][rows];
+    for (int i = 0; i < rows; i++)
     {
-        for (int j = 0; j < Cols; j++)
+        for (int j = 0; j < cols; j++)
         {
-            N_list[j][i] = list[i][j];
+            N_list[i][j] = list[j][i];
         }
     }
-
-    for (int i = 0; i < Cols; i++)
+    for (int i = 0; i < rows; i++)
     {
-        for (int j = 0; j < Rows; j++)
+        for (int j = 0; j < cols; j++)
         {
             cout << N_list[i][j] << " ";
         }
         cout << "\n";
     }
 }
-
-int main() {
-    int list[Rows][Cols];
-
-    for (int i = 0; i < Rows; i++)
+int main()
+{
+    int list[rows][cols];
+    for (int i = 0; i < rows; i++)
     {
-        for (int j = 0; j < Cols; j++)
+        for (int j = 0; j < cols; j++)
         {
-            list[i][j] = i + j * Rows;
+            list[i][j] = i + j * rows;
         }
     }
-    for (int i = 0; i < Rows; i++)
+    for (int i = 0; i < rows; i++)
     {
-        for (int j = 0; j < Cols; j++)
+        for (int j = 0; j < cols; j++)
         {
             cout << list[i][j] << " ";
         }
